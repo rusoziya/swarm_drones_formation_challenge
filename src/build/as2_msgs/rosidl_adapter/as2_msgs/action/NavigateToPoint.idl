@@ -1,0 +1,60 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/NavigateToPoint.action
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/YawMode.idl"
+#include "builtin_interfaces/msg/Duration.idl"
+#include "geometry_msgs/msg/PointStamped.idl"
+#include "geometry_msgs/msg/PoseStamped.idl"
+#include "geometry_msgs/msg/TwistStamped.idl"
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Navigate to Point")
+    struct NavigateToPoint_Goal {
+      @verbatim (language="comment", text=
+        "Request" "\n"
+        "Goal pose 3D (m)")
+      geometry_msgs::msg::PointStamped point;
+
+      @verbatim (language="comment", text=
+        "Yaw goal mode")
+      as2_msgs::msg::YawMode yaw;
+
+      @verbatim (language="comment", text=
+        "Maximum speed desired in path (m/s)")
+      float navigation_speed;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct NavigateToPoint_Result {
+      @verbatim (language="comment", text=
+        "Point reached?")
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct NavigateToPoint_Feedback {
+      @verbatim (language="comment", text=
+        "Current pose (m)")
+      geometry_msgs::msg::PoseStamped current_pose;
+
+      @verbatim (language="comment", text=
+        "Current speed (m/s)")
+      geometry_msgs::msg::TwistStamped current_speed;
+
+      @verbatim (language="comment", text=
+        "Time from departure (s)")
+      builtin_interfaces::msg::Duration navigation_time;
+
+      @verbatim (language="comment", text=
+        "Time to goal (s)")
+      builtin_interfaces::msg::Duration estimated_time_remaining;
+
+      @verbatim (language="comment", text=
+        "Distance to goal (m)")
+      float distance_remaining;
+    };
+  };
+};

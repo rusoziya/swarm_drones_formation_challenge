@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/ListControlModes.srv
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: ListControlModes" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service ask for available control modes list")
+    struct ListControlModes_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct ListControlModes_Response {
+      @verbatim (language="comment", text=
+        "Control modes source")
+      string source;
+
+      @verbatim (language="comment", text=
+        "Control modes list")
+      sequence<uint8> control_modes;
+    };
+  };
+};

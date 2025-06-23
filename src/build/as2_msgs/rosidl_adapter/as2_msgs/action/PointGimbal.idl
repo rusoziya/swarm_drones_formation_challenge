@@ -1,0 +1,41 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/PointGimbal.action
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/GimbalControl.idl"
+#include "geometry_msgs/msg/Vector3Stamped.idl"
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Point Gimbal action definition")
+    struct PointGimbal_Goal {
+      @verbatim (language="comment", text=
+        "Request" "\n"
+        "Goal target")
+      as2_msgs::msg::GimbalControl control;
+
+      @verbatim (language="comment", text=
+        "Keep following after reach target")
+      boolean follow_mode;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct PointGimbal_Result {
+      @verbatim (language="comment", text=
+        "False if failed to point to target")
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct PointGimbal_Feedback {
+      @verbatim (language="comment", text=
+        "Current attitude (rad)")
+      geometry_msgs::msg::Vector3Stamped gimbal_attitude;
+
+      @verbatim (language="comment", text=
+        "Current speed (rad/s)")
+      geometry_msgs::msg::Vector3Stamped gimbal_speed;
+    };
+  };
+};

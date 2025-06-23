@@ -1,0 +1,8 @@
+---------------------------------------------------
+Stage 2: Decentralized APF + Separation
+Success: 1
+Total Time: 149.953 s
+Average Reformation Time: 34.589 s
+Average Switch Latency: 46.601 s
+Average Path Length: 12.459 m
+Average CPU Load: 0.485 s/step

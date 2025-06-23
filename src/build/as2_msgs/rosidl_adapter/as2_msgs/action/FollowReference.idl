@@ -1,0 +1,53 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/FollowReference.action
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/YawMode.idl"
+#include "geometry_msgs/msg/PointStamped.idl"
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Follow reference action definition")
+    struct FollowReference_Goal {
+      @verbatim (language="comment", text=
+        "Request" "\n"
+        "Yaw mode")
+      as2_msgs::msg::YawMode yaw;
+
+      @verbatim (language="comment", text=
+        "Goal pose 3D (m)")
+      geometry_msgs::msg::PointStamped target_pose;
+
+      @verbatim (language="comment", text=
+        "Maximum speed in x (m/s)")
+      float max_speed_x;
+
+      @verbatim (language="comment", text=
+        "Maximum speed in x (m/s)")
+      float max_speed_y;
+
+      @verbatim (language="comment", text=
+        "Maximum speed in x (m/s)")
+      float max_speed_z;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct FollowReference_Result {
+      @verbatim (language="comment", text=
+        "False if failed to takeoff")
+      boolean follow_reference_success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct FollowReference_Feedback {
+      @verbatim (language="comment", text=
+        "Actual speed (m/s)")
+      float actual_speed;
+
+      @verbatim (language="comment", text=
+        "Distance to goal (m)")
+      float actual_distance_to_goal;
+    };
+  };
+};

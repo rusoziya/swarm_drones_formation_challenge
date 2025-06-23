@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/NodeStatus.msg
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module msg {
+    module NodeStatus_Constants {
+      const int8 UNCONFIGURED = 0;
+      const int8 INACTIVE = 1;
+      const int8 ACTIVE = 2;
+      const int8 FINALIZED = 3;
+    };
+    @verbatim (language="comment", text=
+      "Message that shows the node status")
+    struct NodeStatus {
+      @verbatim (language="comment", text=
+        "node status")
+      int8 status;
+    };
+  };
+};

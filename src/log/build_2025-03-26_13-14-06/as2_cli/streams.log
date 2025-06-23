@@ -1,0 +1,18 @@
+[0.027s] Invoking command in '/home/ziyar/project_gazebo_ws/src/build/as2_cli': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ziyar/project_gazebo_ws/install/scenario_runner:/home/ziyar/project_gazebo_ws/install/scenario_obstacle_viz:/home/ziyar/project_gazebo_ws/install/as2_visualization:/home/ziyar/project_gazebo_ws/install/as2_keyboard_teleoperation:/home/ziyar/project_gazebo_ws/install/as2_python_api:/opt/ros/humble /usr/bin/cmake /home/ziyar/project_gazebo_ws/src/aerostack2/as2_cli -DCMAKE_INSTALL_PREFIX=/home/ziyar/project_gazebo_ws/src/install/as2_cli
+[0.216s] -- The C compiler identification is GNU 11.4.0
+[0.216s] -- The CXX compiler identification is GNU 11.4.0
+[0.216s] -- Detecting C compiler ABI info
+[0.242s] -- Detecting C compiler ABI info - done
+[0.249s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.249s] -- Detecting C compile features
+[0.249s] -- Detecting C compile features - done
+[0.251s] -- Detecting CXX compiler ABI info
+[0.312s] -- Detecting CXX compiler ABI info - done
+[0.317s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.317s] -- Detecting CXX compile features
+[0.317s] -- Detecting CXX compile features - done
+[0.320s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.626s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.797s] -- Configuring done
+[0.800s] -- Generating done
+[0.802s] -- Build files have been written to: /home/ziyar/project_gazebo_ws/src/build/as2_cli

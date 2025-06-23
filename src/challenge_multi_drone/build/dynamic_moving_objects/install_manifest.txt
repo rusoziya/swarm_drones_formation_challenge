@@ -1,0 +1,2 @@
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/install/dynamic_moving_objects/include/dynamic_object.hpp
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/install/dynamic_moving_objects/lib/libDynamicMovingObjects.so

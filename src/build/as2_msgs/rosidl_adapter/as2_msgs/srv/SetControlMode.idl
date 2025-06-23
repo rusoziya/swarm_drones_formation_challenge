@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/SetControlMode.srv
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/ControlMode.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: SetPlatformControlMode" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service sets a platform control mode")
+    struct SetControlMode_Request {
+      @verbatim (language="comment", text=
+        "Control mode to set")
+      as2_msgs::msg::ControlMode control_mode;
+    };
+    struct SetControlMode_Response {
+      @verbatim (language="comment", text=
+        "whether the control mode has been set or not")
+      boolean success;
+    };
+  };
+};

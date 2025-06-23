@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/PolygonList.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PolygonStamped.idl"
+
+module as2_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "List of polygons to visualize multiple geozones in RVIZ2")
+    struct PolygonList {
+      sequence<geometry_msgs::msg::PolygonStamped> polygons;
+    };
+  };
+};

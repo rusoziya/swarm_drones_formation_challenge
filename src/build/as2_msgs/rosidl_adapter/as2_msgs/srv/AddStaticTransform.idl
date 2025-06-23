@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/AddStaticTransform.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Transform.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: AddStaticTransform" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service receives a transform to add it to the tf tree as static transform")
+    struct AddStaticTransform_Request {
+      @verbatim (language="comment", text=
+        "Parent frame frame id")
+      string frame_id;
+
+      @verbatim (language="comment", text=
+        "Child frame id")
+      string child_frame_id;
+
+      @verbatim (language="comment", text=
+        "Transform")
+      geometry_msgs::msg::Transform transform;
+    };
+    struct AddStaticTransform_Response {
+      @verbatim (language="comment", text=
+        "whether the transform has been set or not")
+      boolean success;
+    };
+  };
+};

@@ -1,0 +1,2 @@
+source;share/led_ring_visualizer/environment/ament_prefix_path.sh
+source;share/led_ring_visualizer/environment/path.sh

@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/YawMode.msg
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module msg {
+    module YawMode_Constants {
+      @verbatim (language="comment", text=
+        "Keep the current yaw angle")
+      const uint8 KEEP_YAW = 0;
+      @verbatim (language="comment", text=
+        "Yaw angle is aligned with the path")
+      const uint8 PATH_FACING = 1;
+      @verbatim (language="comment", text=
+        "Yaw angle is fixed to a given angle")
+      const uint8 FIXED_YAW = 2;
+      @verbatim (language="comment", text=
+        "Yaw angle is set by a topic")
+      const uint8 YAW_FROM_TOPIC = 3;
+      @verbatim (language="comment", text=
+        "Yaw angle is set by pose orientation")
+      const uint8 YAW_FROM_ORIENTATION = 4;
+      @verbatim (language="comment", text=
+        "Yaw angle is set to face the used frame")
+      const uint8 YAW_TO_FRAME = 5;
+    };
+    @verbatim (language="comment", text=
+      "Yaw goal")
+    struct YawMode {
+      @verbatim (language="comment", text=
+        "Yaw mode")
+      uint8 mode;
+
+      @verbatim (language="comment", text=
+        "Fixed yaw (rad)")
+      float angle;
+    };
+  };
+};

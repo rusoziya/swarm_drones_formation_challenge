@@ -1,0 +1,2 @@
+Invoking command in '/home/ziyar/project_gazebo_ws/src/build/cfclient': /usr/bin/cmake /home/ziyar/project_gazebo_ws/src/crazyflie-clients-python -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/ziyar/project_gazebo_ws/src/install/cfclient
+Invoked command in '/home/ziyar/project_gazebo_ws/src/build/cfclient' returned '1': /usr/bin/cmake /home/ziyar/project_gazebo_ws/src/crazyflie-clients-python -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/ziyar/project_gazebo_ws/src/install/cfclient

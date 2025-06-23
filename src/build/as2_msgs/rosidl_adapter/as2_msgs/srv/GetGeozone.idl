@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/GetGeozone.srv
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/Geozone.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: GetGeoStructure" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service return a geostructure list (lat, lon, alt) stored in the geozones node")
+    struct GetGeozone_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct GetGeozone_Response {
+      @verbatim (language="comment", text=
+        "whether the geofence has been set or not")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "geofences stored in memory")
+      sequence<as2_msgs::msg::Geozone> geozone_list;
+    };
+  };
+};

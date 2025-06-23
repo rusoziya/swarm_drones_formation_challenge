@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/GeopathToPath.srv
+// generated code does not contain a copyright notice
+
+#include "geographic_msgs/msg/GeoPath.idl"
+#include "nav_msgs/msg/Path.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: PathToGeopath" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service receives a path in LatLon and returns it transformed into local")
+    struct GeopathToPath_Request {
+      @verbatim (language="comment", text=
+        "Path in lat/lon and altitude")
+      geographic_msgs::msg::GeoPath geo_path;
+    };
+    struct GeopathToPath_Response {
+      @verbatim (language="comment", text=
+        "whether the origin has been set or not")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "Path in meters")
+      nav_msgs::msg::Path path;
+    };
+  };
+};

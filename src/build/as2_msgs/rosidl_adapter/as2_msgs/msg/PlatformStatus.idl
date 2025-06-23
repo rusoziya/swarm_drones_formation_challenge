@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/PlatformStatus.msg
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module msg {
+    module PlatformStatus_Constants {
+      const int8 EMERGENCY = -1;
+      const int8 DISARMED = 0;
+      const int8 LANDED = 1;
+      const int8 TAKING_OFF = 2;
+      const int8 FLYING = 3;
+      const int8 LANDING = 4;
+    };
+    @verbatim (language="comment", text=
+      "Platform states that an aerial platform can have")
+    struct PlatformStatus {
+      @verbatim (language="comment", text=
+        "platform status")
+      int8 state;
+    };
+  };
+};

@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/PlatformStateMachineEvent.msg
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module msg {
+    module PlatformStateMachineEvent_Constants {
+      const int8 EMERGENCY = -1;
+      const int8 ARM = 0;
+      const int8 DISARM = 1;
+      const int8 TAKE_OFF = 2;
+      const int8 TOOK_OFF = 3;
+      const int8 LAND = 4;
+      const int8 LANDED = 5;
+    };
+    @verbatim (language="comment", text=
+      "Platform events that actives aerial platform state machine ")
+    struct PlatformStateMachineEvent {
+      @verbatim (language="comment", text=
+        "Platform state machine event")
+      int8 event;
+    };
+  };
+};

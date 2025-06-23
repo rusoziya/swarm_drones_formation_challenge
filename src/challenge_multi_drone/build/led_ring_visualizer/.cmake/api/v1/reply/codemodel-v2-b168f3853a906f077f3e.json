@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-ac029765cb5decda2f6f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "led_ring_visualizer",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "led_ring_visualizer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-led_ring_visualizer-be816833715ad4d78fed.json",
+					"name" : "led_ring_visualizer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "led_ring_visualizer_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-led_ring_visualizer_uninstall-b78cae9700a5423b94cc.json",
+					"name" : "led_ring_visualizer_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-d96b63a9a50848009396.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/led_ring_visualizer",
+		"source" : "/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/config_sim/rviz2/led_ring_viz"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

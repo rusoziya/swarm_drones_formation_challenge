@@ -1,0 +1,4 @@
+source;share/led_ring_visualizer/local_setup.bash
+source;share/led_ring_visualizer/local_setup.dsv
+source;share/led_ring_visualizer/local_setup.sh
+source;share/led_ring_visualizer/local_setup.zsh

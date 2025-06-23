@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/TrajectorySetpoints.msg
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/TrajectoryPoint.idl"
+#include "std_msgs/msg/Header.idl"
+
+module as2_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Definition of a point of a trajectory")
+    struct TrajectorySetpoints {
+      @verbatim (language="comment", text=
+        "Message header with the frame_id of the point")
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Array of setpoints of the vehicle in the frame_id frame")
+      sequence<as2_msgs::msg::TrajectoryPoint> setpoints;
+    };
+  };
+};

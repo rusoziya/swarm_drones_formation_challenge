@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/SetGeozone.srv
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/Geozone.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: SetGeostructure" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service creates a geoStructure (lat, lon, alt) to set in geozones node")
+    struct SetGeozone_Request {
+      @verbatim (language="comment", text=
+        "geostructure to set")
+      as2_msgs::msg::Geozone geozone;
+    };
+    struct SetGeozone_Response {
+      @verbatim (language="comment", text=
+        "whether the geoStructure has been set or not")
+      boolean success;
+    };
+  };
+};

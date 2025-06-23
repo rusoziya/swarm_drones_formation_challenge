@@ -1,0 +1,45 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/GoToWaypoint.action
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/YawMode.idl"
+#include "geometry_msgs/msg/PointStamped.idl"
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Go to waypoint action definition")
+    struct GoToWaypoint_Goal {
+      @verbatim (language="comment", text=
+        "Request" "\n"
+        "Yaw mode")
+      as2_msgs::msg::YawMode yaw;
+
+      @verbatim (language="comment", text=
+        "Goal pose 3D (m)")
+      geometry_msgs::msg::PointStamped target_pose;
+
+      @verbatim (language="comment", text=
+        "Maximum speed (m/s)")
+      float max_speed;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct GoToWaypoint_Result {
+      @verbatim (language="comment", text=
+        "False if failed to takeoff")
+      boolean go_to_success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct GoToWaypoint_Feedback {
+      @verbatim (language="comment", text=
+        "Actual speed (m/s)")
+      float actual_speed;
+
+      @verbatim (language="comment", text=
+        "Distance to goal (m)")
+      float actual_distance_to_goal;
+    };
+  };
+};

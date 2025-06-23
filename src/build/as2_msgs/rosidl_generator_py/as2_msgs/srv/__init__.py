@@ -1,0 +1,16 @@
+from as2_msgs.srv._add_static_transform import AddStaticTransform  # noqa: F401
+from as2_msgs.srv._add_static_transform_gps import AddStaticTransformGps  # noqa: F401
+from as2_msgs.srv._dynamic_follower import DynamicFollower  # noqa: F401
+from as2_msgs.srv._dynamic_land import DynamicLand  # noqa: F401
+from as2_msgs.srv._geopath_to_path import GeopathToPath  # noqa: F401
+from as2_msgs.srv._get_geozone import GetGeozone  # noqa: F401
+from as2_msgs.srv._get_origin import GetOrigin  # noqa: F401
+from as2_msgs.srv._list_control_modes import ListControlModes  # noqa: F401
+from as2_msgs.srv._package_pick_up import PackagePickUp  # noqa: F401
+from as2_msgs.srv._package_un_pick import PackageUnPick  # noqa: F401
+from as2_msgs.srv._path_to_geopath import PathToGeopath  # noqa: F401
+from as2_msgs.srv._set_control_mode import SetControlMode  # noqa: F401
+from as2_msgs.srv._set_geozone import SetGeozone  # noqa: F401
+from as2_msgs.srv._set_origin import SetOrigin  # noqa: F401
+from as2_msgs.srv._set_platform_state_machine_event import SetPlatformStateMachineEvent  # noqa: F401
+from as2_msgs.srv._set_speed import SetSpeed  # noqa: F401

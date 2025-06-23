@@ -1,0 +1,9 @@
+-------------------------------------------------------------------
+Stage 2: Centralized Leader-Follower Window Traversal
+Success: 1
+Total time: 113.849 sec
+Average Traversal Time: 33.923 sec
+Average Reformation Time: 36.127 sec
+Average Switch Latency: 3.708 sec
+Average Path Length: 13.254 m
+Average CPU Load: 0.431747

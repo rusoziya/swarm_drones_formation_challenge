@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/SetPlatformStateMachineEvent.srv
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/PlatformStateMachineEvent.idl"
+#include "as2_msgs/msg/PlatformStatus.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: SetPlatformStateMachineEvent" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service sets a PlatformStateMachineEvent")
+    struct SetPlatformStateMachineEvent_Request {
+      @verbatim (language="comment", text=
+        "event to set")
+      as2_msgs::msg::PlatformStateMachineEvent event;
+    };
+    struct SetPlatformStateMachineEvent_Response {
+      @verbatim (language="comment", text=
+        "whether the PSM has been set or not")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "PSM result of the aircraft")
+      as2_msgs::msg::PlatformStatus current_state;
+    };
+  };
+};

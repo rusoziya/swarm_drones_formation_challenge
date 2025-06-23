@@ -1,0 +1,8 @@
+source;share/dynamic_moving_objects/hook/ld_library_path_lib.ps1
+source;share/dynamic_moving_objects/hook/ld_library_path_lib.dsv
+source;share/dynamic_moving_objects/hook/ld_library_path_lib.sh
+source;share/dynamic_moving_objects/local_setup.bash
+source;share/dynamic_moving_objects/local_setup.dsv
+source;share/dynamic_moving_objects/local_setup.ps1
+source;share/dynamic_moving_objects/local_setup.sh
+source;share/dynamic_moving_objects/local_setup.zsh

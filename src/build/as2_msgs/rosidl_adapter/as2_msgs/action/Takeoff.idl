@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/Takeoff.action
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Takeoff action definition")
+    struct Takeoff_Goal {
+      @verbatim (language="comment", text=
+        "Request" "\n"
+        "Takeoff height (m)")
+      float takeoff_height;
+
+      @verbatim (language="comment", text=
+        "Takeoff speed (m/s)")
+      float takeoff_speed;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct Takeoff_Result {
+      @verbatim (language="comment", text=
+        "false if failed to takeoff")
+      boolean takeoff_success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct Takeoff_Feedback {
+      @verbatim (language="comment", text=
+        "actual speed (m/s)")
+      float actual_takeoff_speed;
+
+      @verbatim (language="comment", text=
+        "actual height (m)")
+      float actual_takeoff_height;
+    };
+  };
+};

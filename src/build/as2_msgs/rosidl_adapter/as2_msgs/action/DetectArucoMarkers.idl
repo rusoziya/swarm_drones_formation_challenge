@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/DetectArucoMarkers.action
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "List of ArUco IDs")
+    struct DetectArucoMarkers_Goal {
+      @verbatim (language="comment", text=
+        "Request")
+      sequence<uint16> target_ids;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct DetectArucoMarkers_Result {
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct DetectArucoMarkers_Feedback {
+      boolean sucess;
+    };
+  };
+};

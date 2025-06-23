@@ -1,0 +1,4 @@
+source;share/led_ring_plugin/environment/ament_prefix_path.sh
+source;share/led_ring_plugin/environment/led_ring_plugin.sh
+source;share/led_ring_plugin/environment/library_path.sh
+source;share/led_ring_plugin/environment/path.sh

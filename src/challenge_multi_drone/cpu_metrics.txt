@@ -1,0 +1,1 @@
+Average CPU Load: 0.055232

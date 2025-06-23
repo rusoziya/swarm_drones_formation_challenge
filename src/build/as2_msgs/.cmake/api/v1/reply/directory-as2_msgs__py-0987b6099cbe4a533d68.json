@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "as2_msgs__py",
+		"source" : "/home/ziyar/project_gazebo_ws/src/build/as2_msgs/as2_msgs__py"
+	}
+}

@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/AlertEvent.msg
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module msg {
+    module AlertEvent_Constants {
+      @verbatim (language="comment", text=
+        "if value is < 0 then this alert will be handled by the platform directly")
+      const int8 KILL_SWITCH = -1;
+      const int8 EMERGENCY_HOVER = -2;
+      const int8 EMERGENCY_LAND = -3;
+      @verbatim (language="comment", text=
+        "0 value is used for ping or info alerts")
+      const int8 INFO_ALERT = 0;
+      @verbatim (language="comment", text=
+        "if value is > 0 then this alert will be handled by the AS2 framework")
+      const int8 FORCE_HOVER = 1;
+      const int8 FORCE_LAND = 2;
+    };
+    @verbatim (language="comment", text=
+      "Message that encodes different alert Events that can be handled by AS2 framework")
+    struct AlertEvent {
+      int8 alert;
+
+      @verbatim (language="comment", text=
+        "Further description of the alert, for debugging purposes mainly")
+      string description;
+    };
+  };
+};

@@ -1,0 +1,15 @@
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/ament_index/resource_index/package_run_dependencies/as2_cli
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/ament_index/resource_index/parent_prefix_path/as2_cli
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/environment/ament_prefix_path.sh
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/environment/ament_prefix_path.dsv
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/environment/path.sh
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/environment/path.dsv
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/local_setup.bash
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/local_setup.sh
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/local_setup.zsh
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/local_setup.dsv
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/package.dsv
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/ament_index/resource_index/packages/as2_cli
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/cmake/as2_cliConfig.cmake
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/cmake/as2_cliConfig-version.cmake
+/home/ziyar/project_gazebo_ws/src/install/as2_cli/share/as2_cli/package.xml

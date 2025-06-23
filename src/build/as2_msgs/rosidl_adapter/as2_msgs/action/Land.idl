@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/Land.action
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Land action definition")
+    struct Land_Goal {
+      @verbatim (language="comment", text=
+        "Request" "\n"
+        "land speed (m/s)")
+      float land_speed;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct Land_Result {
+      @verbatim (language="comment", text=
+        "false if failed to land")
+      boolean land_success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct Land_Feedback {
+      @verbatim (language="comment", text=
+        "actual speed (m/s)")
+      float actual_land_speed;
+
+      @verbatim (language="comment", text=
+        "actual height (m)")
+      float actual_land_height;
+    };
+  };
+};

@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/DynamicFollower.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Twist.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: DynamicFollower" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service send command to start dynamic follower")
+    struct DynamicFollower_Request {
+      @verbatim (language="comment", text=
+        "Flag to enable follower")
+      boolean enable;
+
+      @verbatim (language="comment", text=
+        "Speed limit (m/s)")
+      geometry_msgs::msg::Twist speed_limit;
+    };
+    struct DynamicFollower_Response {
+      @verbatim (language="comment", text=
+        "whether it could be started or not")
+      boolean success;
+    };
+  };
+};

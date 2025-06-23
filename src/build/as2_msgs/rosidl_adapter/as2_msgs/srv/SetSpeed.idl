@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/SetSpeed.srv
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/Speed.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: SetSpeed" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service sends a speed to set")
+    struct SetSpeed_Request {
+      @verbatim (language="comment", text=
+        "speed to send")
+      as2_msgs::msg::Speed speed;
+    };
+    struct SetSpeed_Response {
+      @verbatim (language="comment", text=
+        "whether the speed has been received or not")
+      boolean success;
+    };
+  };
+};

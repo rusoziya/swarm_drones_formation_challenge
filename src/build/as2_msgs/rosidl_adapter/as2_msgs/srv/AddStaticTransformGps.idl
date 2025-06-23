@@ -1,0 +1,44 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/AddStaticTransformGps.srv
+// generated code does not contain a copyright notice
+
+#include "sensor_msgs/msg/NavSatFix.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: AddStaticTransform" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service receives a transform to add it to the tf tree as static transform")
+    struct AddStaticTransformGps_Request {
+      @verbatim (language="comment", text=
+        "Parent frame frame id")
+      string frame_id;
+
+      @verbatim (language="comment", text=
+        "Child frame id")
+      string child_frame_id;
+
+      @verbatim (language="comment", text=
+        "Transform")
+      sensor_msgs::msg::NavSatFix gps_position;
+
+      @verbatim (language="comment", text=
+        "yaw")
+      float azimuth;
+
+      @verbatim (language="comment", text=
+        "pitch")
+      float elevation;
+
+      @verbatim (language="comment", text=
+        "roll")
+      float bank;
+    };
+    struct AddStaticTransformGps_Response {
+      @verbatim (language="comment", text=
+        "whether the transform has been set or not")
+      boolean success;
+    };
+  };
+};

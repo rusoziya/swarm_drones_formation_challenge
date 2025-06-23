@@ -1,0 +1,7 @@
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/dynamic_moving_objects/CMakeFiles/DynamicMovingObjects.dir
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/dynamic_moving_objects/CMakeFiles/edit_cache.dir
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/dynamic_moving_objects/CMakeFiles/rebuild_cache.dir
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/dynamic_moving_objects/CMakeFiles/list_install_components.dir
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/dynamic_moving_objects/CMakeFiles/install.dir
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/dynamic_moving_objects/CMakeFiles/install/local.dir
+/home/ziyar/project_gazebo_ws/src/challenge_multi_drone/build/dynamic_moving_objects/CMakeFiles/install/strip.dir

@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from as2_msgs/srv/SetOrigin.srv
+// generated code does not contain a copyright notice
+
+#include "geographic_msgs/msg/GeoPoint.idl"
+
+module as2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "SERVICE TYPE: SetOrigin" "\n"
+      "------------------------------------------------------------------------------" "\n"
+      "This service sends a origin (lat, lon, alt) to set")
+    struct SetOrigin_Request {
+      @verbatim (language="comment", text=
+        "origin to set")
+      geographic_msgs::msg::GeoPoint origin;
+    };
+    struct SetOrigin_Response {
+      @verbatim (language="comment", text=
+        "whether the origin has been set or not")
+      boolean success;
+    };
+  };
+};

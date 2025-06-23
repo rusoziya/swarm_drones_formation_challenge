@@ -1,0 +1,42 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/Geozone.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Polygon.idl"
+
+module as2_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "GeoStructure defined by an id, alert that generates in case of event and a polygon " "\n"
+      "that defines the area.")
+    struct Geozone {
+      @verbatim (language="comment", text=
+        "geofence id")
+      int8 id;
+
+      @verbatim (language="comment", text=
+        "alert generated")
+      int8 alert;
+
+      @verbatim (language="comment", text=
+        "geofence or geocage")
+      string type;
+
+      @verbatim (language="comment", text=
+        "cartesian or gps")
+      string data_type;
+
+      @verbatim (language="comment", text=
+        "fence polygon")
+      geometry_msgs::msg::Polygon polygon;
+
+      @verbatim (language="comment", text=
+        "height limit up")
+      float z_up;
+
+      @verbatim (language="comment", text=
+        "height limit bottom")
+      float z_down;
+    };
+  };
+};

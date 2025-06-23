@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/Acro.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Vector3.idl"
+#include "std_msgs/msg/Header.idl"
+
+module as2_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Message for RPY rates and thrust (ACRO)")
+    struct Acro {
+      @verbatim (language="comment", text=
+        "Message header")
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Roll-, pitch-, yaw-rate around body axes")
+      @unit (value="rad/s")
+      geometry_msgs::msg::Vector3 angular_rates;
+
+      @verbatim (language="comment", text=
+        "Thrust expressed in the body frame." "\n"
+        "For a fixed-wing, usually the x-component is used." "\n"
+        "For a multi-rotor, usually the z-component is used." "\n"
+        "Set all un-used components to 0.")
+      @unit (value="N")
+      geometry_msgs::msg::Vector3 thrust;
+    };
+  };
+};

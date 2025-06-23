@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/SetOffboardMode.action
+// generated code does not contain a copyright notice
+
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Request")
+    struct SetOffboardMode_Goal {
+      boolean request;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct SetOffboardMode_Result {
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct SetOffboardMode_Feedback {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};

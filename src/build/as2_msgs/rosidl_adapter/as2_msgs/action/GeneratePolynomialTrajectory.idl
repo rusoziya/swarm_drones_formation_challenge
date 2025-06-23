@@ -1,0 +1,50 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from as2_msgs/action/GeneratePolynomialTrajectory.action
+// generated code does not contain a copyright notice
+
+#include "as2_msgs/msg/PoseWithID.idl"
+#include "as2_msgs/msg/YawMode.idl"
+#include "std_msgs/msg/Header.idl"
+
+module as2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Trajectory_generator action definition")
+    struct GeneratePolynomialTrajectory_Goal {
+      @verbatim (language="comment", text=
+        "Request" "\n"
+        "Message header, with the frame of the pose list")
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Yaw goal mode")
+      as2_msgs::msg::YawMode yaw;
+
+      @verbatim (language="comment", text=
+        "List of poses with ID in path")
+      sequence<as2_msgs::msg::PoseWithID> path;
+
+      @verbatim (language="comment", text=
+        "Maximum speed desired in path (m/s)")
+      float max_speed;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct GeneratePolynomialTrajectory_Result {
+      @verbatim (language="comment", text=
+        "False if failed to follow the generated trajectory")
+      boolean trajectory_generator_success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct GeneratePolynomialTrajectory_Feedback {
+      @verbatim (language="comment", text=
+        "Next waypoint id in path to follow")
+      string next_waypoint_id;
+
+      @verbatim (language="comment", text=
+        "Number of remaining waypoints to follow")
+      uint16 remaining_waypoints;
+    };
+  };
+};

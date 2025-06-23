@@ -1,0 +1,17 @@
+-------------------------------------------------------------------
+Stage 3: Decentralized Forest Traversal
+Total time: 59.416 sec
+Formation switches: 3
+Average reformation time: 8.522 sec
+Average path length: 11.000 m
+Average CPU load: 0.634 s/step
+-------------------------------------------------------------------
+Stage 3: Decentralized Forest Traversal
+Total time: 59.449 sec
+Formation switches: 3
+Average reformation time: 6.632 sec
+Average path length: 9.682 m
+Average CPU load: 0.337 s/step
+Per-drone path lengths: [8.839, 11.446, 9.201, 9.879, 9.043] m
+Max CPU load: 0.700 s
+Timestamp: 2025-04-23 11:23:08

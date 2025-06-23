@@ -1,0 +1,72 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from as2_msgs/msg/ControlMode.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module as2_msgs {
+  module msg {
+    module ControlMode_Constants {
+      const int8 NONE = 0;
+      @verbatim (language="comment", text=
+        "Yaw angle control mode (rad)")
+      const int8 YAW_ANGLE = 1;
+      @verbatim (language="comment", text=
+        "Yaw speed control mode (rad/s)")
+      const int8 YAW_SPEED = 2;
+      @verbatim (language="comment", text=
+        "mode when the controller is not set")
+      const int8 UNSET = 0;
+      @verbatim (language="comment", text=
+        "mode when the controller is in hover mode")
+      const int8 HOVER = 1;
+      @verbatim (language="comment", text=
+        "x,   y , z  refs")
+      const int8 POSITION = 2;
+      @verbatim (language="comment", text=
+        "vx, vy , vz refs")
+      const int8 SPEED = 3;
+      @verbatim (language="comment", text=
+        "vx, vy , z refs")
+      const int8 SPEED_IN_A_PLANE = 4;
+      @verbatim (language="comment", text=
+        "roll, pitch, yaw  refs")
+      const int8 ATTITUDE = 5;
+      @verbatim (language="comment", text=
+        "roll, pitch, yawrate  refs")
+      const int8 ACRO = 6;
+      @verbatim (language="comment", text=
+        "x, y z, vx, vy, vz, ax, ay, az refs")
+      const int8 TRAJECTORY = 7;
+      const int8 UNDEFINED_FRAME = 0;
+      @verbatim (language="comment", text=
+        "local coordinates (use this by default)")
+      const int8 LOCAL_ENU_FRAME = 1;
+      @verbatim (language="comment", text=
+        "body coordinates")
+      const int8 BODY_FLU_FRAME = 2;
+      @verbatim (language="comment", text=
+        "gnss wcoordinates")
+      const int8 GLOBAL_LAT_LONG_ASML = 3;
+    };
+    @verbatim (language="comment", text=
+      "Message that encodes the possible control modes supported in Aerostack2.")
+    struct ControlMode {
+      @verbatim (language="comment", text=
+        "Message header")
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Yaw mode")
+      int8 yaw_mode;
+
+      @verbatim (language="comment", text=
+        "Control mode")
+      int8 control_mode;
+
+      @verbatim (language="comment", text=
+        "Reference frame")
+      int8 reference_frame;
+    };
+  };
+};
