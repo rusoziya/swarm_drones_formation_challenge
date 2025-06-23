@@ -32,134 +32,184 @@ swarm_drones_formation_challenge/
 └── README.md (this file)
 ```
 
-# 📘 Detailed Challenge Descriptions & Key Findings
+## Detailed Challenge Descriptions & Key Findings
 
-Below we summarize each mission stage with hyperparameters, performance metrics, observations, and visual GIF demonstrations located in `src/challenge_multi_drone/demo/`. For full experiment logs, plots, and parameter sweeps, refer to Section 3–5 of the report (`COMP0240_CW2.pdf`).
+Below we summarize each mission stage, separating the analysis for centralized and decentralized approaches. We include hyperparameters, performance metrics, key observations, and visual demonstrations. For full experiment logs, plots, and parameter sweeps, refer to Sections 3–5 of the report (COMP0240_CW2.pdf).
 
 ---
 
 ### Stage 1 – Adaptive Formation Patterns
 
-**Scenario:** Five drones follow a circular 12 m radius trajectory at 2 m altitude, switching among six predefined patterns (Line, V, Diamond, Circle, Grid, Staggered) every 30°.
+**Scenario:**  
+Five drones follow a circular 12 m radius trajectory at 2 m altitude, switching among six predefined patterns (Line, V, Diamond, Circle, Grid, Staggered) every 30°.
 
-| Aspect | Centralized | Decentralized |
-| :--- | :--- | :--- |
-| **Script** | `mission_stage1_centralised.py` | `mission_stage1_decentralised.py` |
-| **Control** | Leader–follower; central node computes offsets and broadcasts | Consensus Swarm-wide heartbeat (20 Hz) + election |
-| **Waypoint dt** | 0.5 s | 0.5 s |
-| **Drone speed** | 0.7 m/s | 0.7 m/s |
+#### Centralized Approach
+- **Script:** `mission_stage1_centralised.py`
+- **Control Strategy:** Leader-follower model where a single node computes trajectories for all drones and broadcasts commands, ensuring tight temporal coordination.
+- **Key Hyperparameters:**
+  - Waypoint Angular Step (Δθ): 30°
+  - Drone Speed: 0.7 m/s
+  - Stabilization Pause: 0.5 s
+- **Performance Metrics:**
+  - Mission Time: 136.3 s
+  - Max Formation Error: 2.25 m
+  - Total CPU Load: 423.9 s (on the leader node)
+- **Observations:**  
+  Provides excellent synchronization and precision, completing the mission faster with lower formation error. However, it concentrates the entire computational load on one drone, creating a single point of failure.
 
-**Metrics & Tuning**
+#### Decentralized Approach
+- **Script:** `mission_stage1_decentralised.py`
+- **Control Strategy:** Each drone runs an identical autonomy stack, using a swarm-wide heartbeat (20 Hz) and a leader-election protocol to achieve consensus on formation and trajectory phase.
+- **Key Hyperparameters:**
+  - Heartbeat Rate: 20 Hz
+  - Leader Election Timeout: 0.6 s
+  - Drone Speed: 0.7 m/s
+- **Performance Metrics:**
+  - Mission Time: ~215.0 s
+  - Max Formation Error: 4.70 m
+  - Total CPU Load: ~55.0 s (across 5 agents)
+- **Observations:**  
+  Significantly more robust—loss of the leader triggers re-election without halting the mission. Trade-off is longer mission time and greater formation error due to communication latency.
 
-| Metric | Centralized | Decentralized |
-| :--- | :--- | :--- |
-| **Mission time** | 136.3 s | 215.0 s |
-| **Max formation error** | 2.25 m | 4.70 m |
-| **CPU load (total loop time)**| 423.9 s | 55.0 s (shared across 5 agents) |
+#### Visualization: Stage 1
+- [GIF Demo of Centralized Stage 1](src/challenge_multi_drone/docs/centralized_stage1.gif)
+- [GIF Demo of Decentralized Stage 1](src/challenge_multi_drone/docs/decentralized_stage1.gif)
 
-* **Key hyperparameters:**
-    * Pause duration per pattern: 0.5 s (stability vs. speed)
-    * Heartbeat rate: 20 Hz; election timeout: 0.6 s
-* **Observation:** Centralized offers tighter synchronization but risks full mission failure on leader loss. Decentralized gracefully continues with increased scatter.
-
-**Visualization**
-
-| Centralized | Decentralized |
-| :--- | :--- |
-| *[GIF Demo]* | *[GIF Demo]* |
+*Export to Sheets*
 
 ---
 
 ### Stage 2 – Passage Through Narrow Apertures
 
-**Scenario:** Traverse two 1.5 m wide windows positioned 8 m apart. Drones reconfigure between line (enter) and vertical stack (exit).
+**Scenario:**  
+A swarm of five drones traverses two narrow, 1.5 m-wide windows positioned 8 m apart, requiring reconfiguration from a line formation to a vertical stack and back.
 
-| Metric | Centralized | Decentralized |
-| :--- | :--- | :--- |
-| **Success rate** | 100% | 100% |
-| **Total mission time** | 89.5 s | 83.6 s |
-| **Reformation time** | 23.6 s | 17.4 s |
-| **Switch latency** | 3.6 s | 7.5 s |
-| **Avg path length** | 12.6 m | 12.9 m |
-| **CPU per step** | 0.289 s | 0.231 s |
+#### Centralized Approach
+- **Script:** `mission_stage2_central.py`
+- **Control Strategy:** Leader drone detects proximity to the window (1.2 m) and triggers a formation switch for the entire swarm using pre-computed offsets.
+- **Key Hyperparameters:**
+  - Speed: 3.0 m/s
+  - Controller Timestep (dt): 0.3 s
+  - Formation Switch Threshold: 1.2 m
+- **Performance Metrics:**
+  - Success Rate: 100%
+  - Total Mission Time: 89.5 s
+  - Switch Latency: 3.6 s
+- **Observations:**  
+  Executes formation switches very quickly and cohesively due to a single command source, resulting in low latency.
 
-**Algorithmic details**
+#### Decentralized Approach
+- **Script:** `mission_stage2_decentralized.py`
+- **Control Strategy:** Each drone uses an Artificial Potential Field (APF) to navigate. Repulsive forces from window edges (k_rep = 0.8) and attractive forces toward the goal guide each agent independently.
+- **Key Hyperparameters:**
+  - APF Attractive Gains (k_x, k_y): 1.1, 0.8
+  - APF Repulsive Gain (k_rep): 0.8
+- **Performance Metrics:**
+  - Success Rate: 100%
+  - Total Mission Time: 83.6 s
+  - Reformation Time: 17.4 s
+- **Observations:**  
+  Faster overall mission and reformation due to local, parallel adjustments. Introduces higher jitter and slightly increased switch latency.
 
-* **Centralized:** Proximity trigger at 1.2 m switches formation via precomputed offsets. Speed tuned at 3.0 m/s, dt=0.3 s.
-* **Decentralized:** APF with repulsive gain $k_{ᵧ}=0.8$ at window edges; APF parameters ($k_{x}=1.1, k_{ᵧ}=0.8$) chosen via grid search.
-* **Observation:** Decentralized yields faster reformation due to local adjustments, at the expense of higher jitter.
+#### Visualization: Stage 2
+- [GIF Demo of Centralized Stage 2](src/challenge_multi_drone/docs/centralized_stage2.gif)
+- [GIF Demo of Decentralized Stage 2](src/challenge_multi_drone/docs/decentralized_stage2.gif)
 
-**Visualization**
-
-| Centralized | Decentralized |
-| :--- | :--- |
-| *[GIF Demo]* | *[GIF Demo]* |
+*Export to Sheets*
 
 ---
 
 ### Stage 3 – Dense Forest Traversal
 
-**Scenario:** Navigate through 20 randomly placed cylindrical obstacles (r=0.5 m) in a 20×20 m area. Pattern switches at safe zones.
+**Scenario:**  
+Navigate a 20×20 m area cluttered with 20 randomly placed cylindrical obstacles (radius 0.5 m). Drones must switch formations in safe zones to pass.
 
-| Metric | Centralized | Decentralized |
-| :--- | :--- | :--- |
-| **Success rate** | 100% | 100% |
-| **Total time** | 93.7 s | 58.7 s |
-| **Reformation ops** | 4 | 4 |
-| **Reform. time** | 26.0 s | 5.7 s |
-| **Path length** | 10.6 m | 11.1 m |
-| **CPU per step** | 0.213 s | 0.351 s |
+#### Centralized Approach
+- **Script:** `mission_stage3_central.py`
+- **Control Strategy:** Leader plans a path for the entire swarm using an APF planner (10 Hz), applying repulsive forces from trees and between drones.
+- **Key Hyperparameters:**
+  - Repulsive Gains: Tree = 30, Neighbor = 15
+  - Waypoint Smoothing Look-ahead: 0.8
+- **Performance Metrics:**
+  - Success Rate: 100%
+  - Total Time: 93.7 s
+  - Reformation Time: 26.0 s
+- **Observations:**  
+  Avoids local minima reliably, but reactive path corrections affect the whole swarm, leading to longer mission and reformation times.
 
-**Algorithmic details**
+#### Decentralized Approach
+- **Script:** `mission_stage3_decentralized.py`
+- **Control Strategy:** Each agent independently plans its path using RRT and applies local potential field corrections for obstacles within 1.2 m.
+- **Key Hyperparameters:**
+  - RRT Step Size: 0.5 m
+  - RRT Goal Bias: 0.2
+  - Local Correction Radius: 1.2 m
+- **Performance Metrics:**
+  - Success Rate: 100%
+  - Total Time: 58.7 s
+  - Reformation Time: 5.7 s
+- **Observations:**  
+  Parallel RRT planning speeds traversal and concurrent local adjustments yield very fast reformation. Higher per-agent CPU load is the trade-off.
 
-* **Centralized:** APF planner at 10 Hz with repulsive gains {tree:30, neighbor:15}, waypoint smoothing look-ahead=0.8.
-* **Decentralized:** RRT per agent (step=0.5 m, bias=0.2), local PF correction if obstacles within 1.2 m.
-* **Observation:** Decentralized reduces reformation latency via parallel planning; centralized avoids local minima but has longer corrections.
+#### Visualization: Stage 3
+- [GIF Demo of Centralized Stage 3](src/challenge_multi_drone/docs/centralized_stage3.gif)
+- [GIF Demo of Decentralized Stage 3](src/challenge_multi_drone/docs/decentralized_stage3.gif)
 
-**Visualization**
-
-| Centralized | Decentralized |
-| :--- | :--- |
-| *[GIF Demo]* | *[GIF Demo]* |
+*Export to Sheets*
 
 ---
 
 ### Stage 4 – Dynamic Obstacle Avoidance
 
-**Scenario:** Five balloons move unpredictably in a 15×15 m arena. Drones maintain V formation while avoiding collisions.
+**Scenario:**  
+Five drones maintain a V-formation while avoiding five unpredictably moving balloons in a 15×15 m arena.
 
-| Metric | Centralized | Decentralized |
-| :--- | :--- | :--- |
-| **Success rate** | 80% | 60% |
-| **Mission time** | 53.7 s | 93.3 s |
-| **CPU per step** | 0.120 s | 0.361 s |
-| **RMS formation error** | 1.10 m | 7.11 m |
-| **Min clearance (m)** | 0.012 | 0.019 |
+#### Centralized Approach
+- **Script:** `mission_stage4_centralised.py`
+- **Control Strategy:** High-level planner uses Conflict-Based Search (CBS) on a time-indexed A* grid (0.5 m resolution), replanning at 20 Hz with formation compression primitives.
+- **Key Hyperparameters:**
+  - Grid Resolution: 0.5 m
+  - Replanning Frequency: 20 Hz
+  - CBS Iteration Limit: 50
+- **Performance Metrics:**
+  - Success Rate: 80%
+  - Mission Time: 53.7 s
+  - RMS Formation Error: 1.10 m
+- **Observations:**  
+  Precise and fast with tight formation, but computationally intensive and sensitive to replanning failures; clearances can be as tight as 1.2 cm.
 
-**Algorithmic details**
+#### Decentralized Approach
+- **Script:** `mission_stage4_decentralised.py`
+- **Control Strategy:** Each agent uses Optimal Reciprocal Collision Avoidance (ORCA) to compute collision-free velocities, with a soft formation constraint (bias = 0.1).
+- **Key Hyperparameters:**
+  - ORCA Time Horizons (Agent/Obstacle): 6 s / 4 s
+  - ORCA Agent Radius: 0.625 m
+  - Formation Bias: 0.1
+- **Performance Metrics:**
+  - Success Rate: 60%
+  - Mission Time: 93.3 s
+  - RMS Formation Error: 7.11 m
+- **Observations:**  
+  Lightweight and safe with larger clearances (1.9 cm), but local-only reasoning yields lower success rate and significant formation drift.
 
-* **Centralized:** CBS on time-indexed A* grid (0.5 m), replanning 20 Hz, CBS limit=50. Formation compression primitives.
-* **Decentralized:** ORCA with formation bias=0.1, radius=0.625 m, horizons (Th=6 s, To=4 s), updates at 10 Hz.
-* **Observation:** Centralized is precise and fast but heavy on replanning; decentralized is safer but drifts under density.
+#### Visualization: Stage 4
+- [GIF Demo of Centralized Stage 4](src/challenge_multi_drone/docs/centralized_stage4.gif)
+- [GIF Demo of Decentralized Stage 4](src/challenge_multi_drone/docs/decentralized_stage4.gif)
 
-**Visualization**
-
-| Centralized | Decentralized |
-| :--- | :--- |
-| *[GIF Demo]* | *[GIF Demo]* |
+*Export to Sheets*
 
 ---
 
-### 📄 Further Reading & Report
+## Further Reading & Report
 
-For full mathematical derivations, hyperparameter sweep plots, and extended discussion of trade-offs, see **COMP0240_CW2.pdf**. Key sections:
+For full mathematical derivations, hyperparameter sweep plots, and extended discussions, see **COMP0240_CW2.pdf**:
 
-* **Section 3:** Stage designs & algorithms
-* **Section 4:** Experimental setup & parameter tuning
-* **Section 5:** Quantitative results & comparative analysis
+- **Section 3:** Stage designs & algorithms  
+- **Section 4:** Experimental setup & parameter tuning  
+- **Section 5:** Quantitative results & comparative analysis  
 
 ---
 
-### License
+## License
 
-MIT © 2025 University College London
+MIT © 2025 University College London  
